@@ -5,7 +5,7 @@
 A simple Ruby native object instantion or wrapper for concept map data 
 from a CXL format file.
 
-The CXL file format is documented at: 
+The CXL file format is documented at: http://cmap.ihmc.us/xml/CXL.html
 
 == FEATURES
 * Read a cxl file
