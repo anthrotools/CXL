@@ -2,7 +2,7 @@
 * website coming as soon as the code base achieves critical mass
 
 == DESCRIPTION
-A simple Pgby native object instantion or wrapper for concept map data 
+A simple Ruby native object instantion or wrapper for concept map data 
 from a CXL format file.
 
 The CXL file format is documented at: 
