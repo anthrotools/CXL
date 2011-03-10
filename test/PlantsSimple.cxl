@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cmap xmlns="http://cmap.ihmc.us/xml/cmap/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+    <res-meta>
+        <dc:title>Plants</dc:title>
+        <dc:description>How do plants grow?</dc:description>
+    </res-meta>
+
+    <map>
+        <concept-list>
+            <concept id="1" label="Plants"/>
+            <concept id="2" label="Leaves"/>
+        </concept-list>
+        <linking-phrase-list>
+            <linking-phrase id="3" label="have"/>
+        </linking-phrase-list>
+        <connection-list>
+            <connection from-id="1" to-id="3"/>
+            <connection from-id="3" to-id="2"/>
+        </connection-list>
+
+        <concept-appearance-list>
+            <concept-appearance id="1" x="73" y="56"/>
+            <concept-appearance id="2" x="136" y="158"/>
+        </concept-appearance-list>
+        <linking-phrase-appearance-list>
+            <linking-phrase-appearance id="3" x="104" y="107"/>
+        </linking-phrase-appearance-list>
+    </map>
+</cmap>
