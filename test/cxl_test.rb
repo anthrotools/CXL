@@ -146,6 +146,49 @@ class TestProposition < Test::Unit::TestCase
   end
 end
 
+class TestConceptView < Test::Unit::TestCase
+  def setup
+    @concept_plant = Concept.new(Nokogiri::XML::fragment('<concept id="1" label="Plants"/>').children.first)
+    @concept_leaf = Concept.new(Nokogiri::XML::fragment('<concept id="2" label="Leaves"/>').children.first)
+    @c1_view = Nokogiri::XML::fragment('<concept-appearance id="1" x="73" y="56"/>').children.first
+  end
+  def test_extract
+    cview = ConceptView.new(@c1_view, [@concept_plant])
+    assert_match("73", cview.x_s)
+    assert(cview.x == 73)
+    assert_match("56", cview.y_s)
+    assert(56 == cview.y)
+    assert(@concept_plant.same_as?(cview.concept)) #not sure why assert match doesn't work. Must be calling some other version of ==
+  end
+
+  #add a more complete set of tests for boundary questions
+  #add test for changing coordinates
+end
+
+class TestPropositionView < Test::Unit::TestCase
+    def setup
+    @concept_plant = Concept.new(Nokogiri::XML::fragment('<concept id="1" label="Plants"/>').children.first)
+    @concept_leaf = Concept.new(Nokogiri::XML::fragment('<concept id="2" label="Leaves"/>').children.first)
+    @have_node = Nokogiri::XML::fragment('<linking-phrase id="3" label="have"/>').children.first
+    @link13 = CXLConnection.new(Nokogiri::XML::fragment('<connection from-id="1" to-id="3"/>').children.first)
+    @link32 = CXLConnection.new(Nokogiri::XML::fragment('<connection from-id="3" to-id="2"/>').children.first)
+    @p3_view = Nokogiri::XML::fragment('<linking-phrase-appearance id="3" x="104" y="107"/>').children.first
+    end
+
+  def test_extract
+    prop = Proposition.new(@have_node,
+                          [@link13,@link32],
+                          [@concept_plant, @concept_leaf])
+    pview = PropositionView.new(@p3_view, [prop])
+
+    assert_match("104",pview.x_s)
+    assert(104 == pview.x)
+    assert_match("107",pview.y_s)
+    assert(107== pview.y)
+  end
+end
+
+
 class TestConceptMap < Test::Unit::TestCase
   def test_extract
     map = ConceptMap.new("../test/PlantsSimple.cxl")

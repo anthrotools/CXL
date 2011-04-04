@@ -2,14 +2,15 @@
 * website coming as soon as the code base achieves critical mass
 
 == DESCRIPTION
-A simple Pgby native object instantion or wrapper for concept map data 
+A simple Ruby native object instantion or wrapper for concept map data
 from a CXL format file.
 
-The CXL file format is documented at: 
+The CXL file format is documented at: cmap.ihmc.us/xml/CXL.html
 
 == FEATURES
 * Read a cxl file
 * Extracts concepts and propositions
+* Extracts some limited appearance information
 * Provides simple Ruby objects and collections for a concept map containing concepts and propositions
 
 == SUPPORT
