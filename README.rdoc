@@ -5,12 +5,11 @@
 A simple Ruby native object instantion or wrapper for concept map data
 from a CXL format file.
 
-The CXL file format is documented at: cmap.ihmc.us/xml/CXL.html
+The CXL file format is documented at: http://cmap.ihmc.us/xml/CXL.html
 
 == FEATURES
 * Read a cxl file
 * Extracts concepts and propositions
-* Extracts some limited appearance information
 * Provides simple Ruby objects and collections for a concept map containing concepts and propositions
 
 == SUPPORT
@@ -21,7 +20,7 @@ Email Donald Cox at anthrotools dot gmail.com
 
 == REQUIREMENTS
  * ruby 1.9 (probably 1.8 but I haven't tested it)
- * nokogiri 
+ * nokogiri
 
 == INSTALL
 
@@ -33,7 +32,7 @@ A gem version is in my plans for when the code base is more functional.
 
 == DEVELOPMENT
 
-Put the code somewhere you can work on it easily. Nothing special needed 
+Put the code somewhere you can work on it easily. Nothing special needed
 at this ponit. I hope you find it useful.
 
 == LICENSE
